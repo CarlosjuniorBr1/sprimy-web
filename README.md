@@ -1,28 +1,55 @@
-# Sprimy
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.11.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 # sprimy-web
+
+Sprimy é uma ferramenta de produtividade que ajuda a dividir tarefas grandes em mini sprints com tempo controlado, permitindo que você mantenha o foco e organize seu trabalho de forma eficiente. Este repositório contém o frontend da aplicação, desenvolvido com **Angular 13**.
+
+## 🚀 Tecnologias Utilizadas
+
+- **Angular 13**: Framework para construção de SPAs (Single Page Applications)
+- **TypeScript**: Superset do JavaScript para garantir tipagem estática e maior escalabilidade
+- **RxJS**: Biblioteca para programação reativa e gerenciamento de fluxo assíncrono
+- **HTML/CSS**: Para estruturação e estilização da interface do usuário
+
+## 🎯 Funcionalidades (em desenvolvimento)
+
+- **Criação de tarefas**: Adicione tarefas principais e sub-tarefas.
+- **Divisão automática em sprints**: Aplique uma divisão inteligente de tempo para cada tarefa.
+- **Cronômetro**: Controle o tempo de cada mini sprint.
+- **Monitoramento de progresso**: Acompanhe o andamento das tarefas em tempo real.
+
+## 📦 Instalação
+
+Para rodar o projeto localmente, siga os passos abaixo:
+
+### Pré-requisitos
+
+- **Node.js** (v16 ou superior) - [Download Node.js](https://nodejs.org/)
+- **Angular CLI** (v13 ou superior) - [Instalar Angular CLI](https://angular.io/cli)
+
+### Passos para Instalação
+
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/seu-usuario/sprintfy-frontend.git
+
+2. Navegue até o diretório do projeto
+
+      ```bash
+  	  cd  sprimy-web
+
+3. Instale as dependências:
+
+      ```bash
+      npm install
+
+4. Inicie o servidor de desenvolvimento:
+
+   ```bash
+   ng serve
+
+
+5. Depois, acesse: http://localhost:4200
+
+
+
+

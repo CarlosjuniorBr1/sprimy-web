@@ -1,0 +1,48 @@
+
+<div class="form-wrapper">
+  <div class="form-container mat-elevation-z4">
+    <h2>Criar Novo Projeto</h2>
+
+    <form [formGroup]="projectForm" (ngSubmit)="submit()">
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Nome do Projeto</mat-label>
+        <input
+          matInput
+          placeholder="Digite o nome do projeto"
+          formControlName="nome"
+          required
+        />
+      </mat-form-field>
+
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Data Prevista de Conclusão</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          formControlName="data_entrega"
+          required
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Objetivo</mat-label>
+        <textarea
+          matInput
+          placeholder="Digite uma descrição"
+          formControlName="objetivo"
+          rows="4"
+        ></textarea>
+      </mat-form-field>
+
+     
+      <button mat-raised-button color="primary" type="submit">
+        Criar Projeto
+      </button>
+    </form>
+  </div>
+</div>

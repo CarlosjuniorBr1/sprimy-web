@@ -1,0 +1,42 @@
+/* src/app/modules/projeto/projeto-details/projeto-details.component.scss */
+
+/* Wrapper que centraliza tudo na tela */
+.form-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to top right, #5c2a7a, #d586bc);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Card branco com sombra */
+.form-container {
+  background: white;
+  padding: 2rem;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+
+  h2 {
+    text-align: center;
+    color: #3c1e57;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+}
+
+/* Garante que todos os campos usem 100% da largura e tenham espaçamento */
+.full-width {
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+/* Botão ocupa toda a largura e tem padding confortável */
+button {
+  width: 100%;
+  padding: 0.75rem;
+  font-weight: 500;
+  font-size: 1rem;
+}

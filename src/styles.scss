@@ -1,4 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+:root {
+  --primary-color: #3c1e57;
+  --text-color: #FFFFFF;
+  --secondary-color: linear-gradient(to right, #FF9900, #000000);
+  --grey-bg: #EEEEEE;
+}

@@ -29,6 +29,7 @@ import { LoginComponent } from './modules/login/login.component';
     MatDatepickerModule,
     MatFormFieldModule,
     MatInputModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

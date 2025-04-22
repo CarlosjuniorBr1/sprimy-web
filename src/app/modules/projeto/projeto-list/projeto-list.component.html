@@ -1,0 +1,127 @@
+<div class="flex flex-col flex-auto w-full">
+  <div class="flex flex-wrap w-full max-w-screen-xl mx-auto p-6 md:p-8">
+      <div class="flex-1 items-center justify-between w-full">
+          <div>
+              <h1 class="text-3xl font-semibold tracking-tight leading-8 mb-35px" >P r o j e t o s</h1>
+              <div class="mt-50px font-medium tracking-tight text-[#5c2a7a]"><h2>Listagem geral</h2></div>
+          </div>
+
+          <!-- Cards com resumos -->
+          <div class="w-full mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+              <div class="flex flex-col bg-white rounded-lg shadow p-6">
+                  <h3 class="text-lg font-semibold">Total de Projetos</h3>
+                  <p class="text-2xl font-bold text-[#3c1e57]">{{ 10}}</p>
+              </div>
+
+              <div class="flex flex-col bg-white rounded-lg shadow p-6">
+                  <h3 class="text-lg font-semibold">Concluídos</h3>
+                  <p class="text-2xl font-bold text-[#5c2a7a]">{{ 5 }}</p>
+              </div>
+
+              <div class="flex flex-col bg-white rounded-lg shadow p-6">
+                  <h3 class="text-lg font-semibold">Em Andamento</h3>
+                  <p class="text-2xl font-bold text-[#5c2a7a]">{{ 3 }}</p>
+              </div>
+
+              <div class="flex flex-col bg-white rounded-lg shadow p-6">
+                  <h3 class="text-lg font-semibold">Atrasados</h3>
+                  <p class="text-2xl font-bold text-[#5c2a7a]">{{2}}</p>
+              </div>
+          </div>
+
+          <!-- Filtros -->
+          <div class="w-full mt-6">
+              <div class="flex flex-row items-center space-x-5">
+
+                  <mat-form-field appearance="fill" class="mr-4 w-48">
+                      <mat-label>Data Inicial</mat-label>
+                      <input matInput [matDatepicker]="inicioPicker"  />
+                      <mat-datepicker-toggle matSuffix [for]="inicioPicker"></mat-datepicker-toggle>
+                      <mat-datepicker #inicioPicker></mat-datepicker>
+                  </mat-form-field>
+
+                  <mat-form-field appearance="fill" class="mr-4 w-48">
+                      <mat-label>Data Final</mat-label>
+                      <input matInput [matDatepicker]="fimPicker"  />
+                      <mat-datepicker-toggle matSuffix [for]="fimPicker"></mat-datepicker-toggle>
+                      <mat-datepicker #fimPicker></mat-datepicker>
+                  </mat-form-field>
+
+                  <mat-form-field class="fuse-mat-no-subscript fuse-mat-rounded fuse-mat-dense w-full"
+                      [floatLabel]="'always'">
+                      <mat-icon> search </mat-icon>
+                      <input matInput placeholder="Buscar projeto..." (keyup)="filtrarProjetos($event.target)">
+                  </mat-form-field>
+
+                  <button
+                  class="ml-4 flex items-center justify-center text-white rounded-md px-4 py-10000 text-base"
+                  style="min-width: unset;"
+                  mat-flat-button
+                  color="primary"
+                >
+                  <mat-icon class="mr-2">add</mat-icon>
+                  Novo Projeto
+                </button>
+
+
+              </div>
+
+              <!-- Tabela -->
+              <div class="mt-6 overflow-x-auto w-full">
+                  <table mat-table matSort class="w-full">
+
+                      <ng-container matColumnDef="nome">
+                          <th mat-header-cell *matHeaderCellDef> Nome </th>
+                          <td mat-cell *matCellDef="let projeto"> {{ projeto.nome }} </td>
+                      </ng-container>
+
+                      <ng-container matColumnDef="responsavel">
+                          <th mat-header-cell *matHeaderCellDef> Responsável </th>
+                          <td mat-cell *matCellDef="let projeto"> {{ projeto.responsavel }} </td>
+                      </ng-container>
+
+                      <ng-container matColumnDef="inicio">
+                          <th mat-header-cell *matHeaderCellDef> Início </th>
+                          <td mat-cell *matCellDef="let projeto"> {{ projeto.inicio | date:'dd/MM/yyyy' }} </td>
+                      </ng-container>
+
+                      <ng-container matColumnDef="status">
+                          <th mat-header-cell *matHeaderCellDef> Status </th>
+                          <td mat-cell *matCellDef="let projeto">
+                              <span [ngClass]="{
+                                  'text-green-600': projeto.status === 'Concluído',
+                                  'text-yellow-600': projeto.status === 'Em andamento',
+                                  'text-red-600': projeto.status === 'Atrasado'
+                              }">{{ projeto.status }}</span>
+                          </td>
+                      </ng-container>
+
+                      <ng-container matColumnDef="acoes">
+                          <th mat-header-cell *matHeaderCellDef> Ações </th>
+                          <td mat-cell *matCellDef="let projeto">
+                              <div class="space-x-2">
+                                  <button mat-flat-button color="primary" >
+                                      <mat-icon [svgIcon]="'edit'"></mat-icon>
+                                  </button>
+                                  <button mat-flat-button color="warn" (click)="deletarProjeto(projeto.id)">
+                                      <mat-icon [svgIcon]="'heroicons_solid:trash'"></mat-icon>
+                                  </button>
+                              </div>
+                          </td>
+                      </ng-container>
+
+                      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                  </table>
+
+
+              </div>
+
+              <div class="p-5 bg-white border-t w-full">
+                  <label>Sem projetos encontrados</label>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

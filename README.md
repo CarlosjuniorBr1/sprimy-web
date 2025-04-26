@@ -24,6 +24,9 @@ Para rodar o projeto localmente, siga os passos abaixo:
 
 - **Node.js** (v16 ou superior) - [Download Node.js](https://nodejs.org/)
 - **Angular CLI** (v13 ou superior) - [Instalar Angular CLI](https://angular.io/cli)
+- **Tailwind**
+    ```bash
+    npm install -D tailwindcss postcss autoprefixer
 
 ### Passos para Instalação
 
